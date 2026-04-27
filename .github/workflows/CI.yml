@@ -20,6 +20,9 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      - name: Dar permissão
+        run: chmod +x mvnw    
+
       - name: Build backend
         run: |
           cd sitebackend
