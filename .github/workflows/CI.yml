@@ -20,8 +20,8 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Dar permissão
-        run: chmod +x mvnw    
+      - name: Setup Maven
+        run: sudo apt-get install maven -y 
 
       - name: Build backend
         run: |
