@@ -22,7 +22,7 @@ jobs:
 
       - name: Build backend
         run: |
-          cd backend
+          cd sitebackend
           ./mvnw clean test
 
       - name: Setup Node
