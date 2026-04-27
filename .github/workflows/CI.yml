@@ -42,5 +42,22 @@ jobs:
       - name: Install frontend dependencies
         run: npm install
 
-      - name: Frontend build
+      - name: Build frontend
         run: npm run build
+
+      # =========================
+      # E2E TESTS (Cypress)
+      # =========================
+      - name: Start backend
+        run: |
+          cd sitebackend
+          mvn spring-boot:run &
+
+      - name: Start frontend
+        run: npm run dev &
+
+      - name: Wait apps start
+        run: sleep 20
+
+      - name: Run Cypress tests
+        run: npx cypress run
